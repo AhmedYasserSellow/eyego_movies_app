@@ -9,11 +9,13 @@ class ColumnTextField extends StatelessWidget {
     required this.onChanged,
     this.suffixIcon,
     this.obscureText = false,
+    required this.validator,
   });
   final String title;
   final void Function(String)? onChanged;
   final Widget? suffixIcon;
   final bool obscureText;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,6 +28,7 @@ class ColumnTextField extends StatelessWidget {
           hintText: title,
           suffixIcon: suffixIcon,
           obscureText: obscureText,
+          validator: validator,
         ),
       ],
     );

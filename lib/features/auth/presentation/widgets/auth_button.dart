@@ -4,8 +4,9 @@ import 'package:eyego_movies_app/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AuthButton extends StatelessWidget {
-  const AuthButton({super.key, required this.onTap});
+  const AuthButton({super.key, required this.onTap, required this.title});
   final void Function() onTap;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,8 +18,8 @@ class AuthButton extends StatelessWidget {
           color: AppColors.primaryColor,
           borderRadius: BorderRadius.circular(kBorderRadius),
         ),
-        child: const Center(
-          child: Text('Sign In', style: AppTextStyles.regularTextStyle),
+        child: Center(
+          child: Text(title, style: AppTextStyles.regularTextStyle),
         ),
       ),
     );

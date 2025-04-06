@@ -16,6 +16,6 @@ abstract class AppTextStyles {
   static const textFieldTextStyle = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.normal,
-    color: Color(0xff67686D),
+    color: AppColors.greyTextColor,
   );
 }

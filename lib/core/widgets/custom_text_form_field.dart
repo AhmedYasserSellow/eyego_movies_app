@@ -10,19 +10,22 @@ class CustomTextFormField extends StatelessWidget {
     required this.onChanged,
     this.obscureText = false,
     this.suffixIcon,
+    this.validator,
   });
   final String hintText;
   final void Function(String)? onChanged;
   final bool obscureText;
   final Widget? suffixIcon;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       obscureText: obscureText,
       style: AppTextStyles.regularTextStyle,
       cursorColor: AppColors.textColor,
       decoration: InputDecoration(
-        suffix: suffixIcon,
+        suffixIcon: suffixIcon,
         contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         hintStyle: AppTextStyles.textFieldTextStyle,
         fillColor: Color(0xff3A3F47),
