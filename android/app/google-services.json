@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "771263121579",
+    "project_id": "eyego-movies-app",
+    "storage_bucket": "eyego-movies-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771263121579:android:afef04d28919d3f5558fee",
+        "android_client_info": {
+          "package_name": "com.example.eyego_movies_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChkqN6iqpR-p_31rWdZZTvBzRsQvBPFrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
