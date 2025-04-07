@@ -1,5 +1,6 @@
 import 'package:eyego_movies_app/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:eyego_movies_app/features/home/presentation/widgets/home_view_body.dart';
+import 'package:eyego_movies_app/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
   final List<Widget> homePagesList = const [
     HomeViewBody(),
-    HomeViewBody(),
+    SearchView(),
     HomeViewBody(),
   ];
   @override

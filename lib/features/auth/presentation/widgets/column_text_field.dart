@@ -1,5 +1,5 @@
 import 'package:eyego_movies_app/core/utils/app_text_styles.dart';
-import 'package:eyego_movies_app/core/widgets/custom_text_form_field.dart';
+import 'package:eyego_movies_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class ColumnTextField extends StatelessWidget {

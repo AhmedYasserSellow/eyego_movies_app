@@ -9,6 +9,8 @@ import 'package:eyego_movies_app/features/auth/domain/repos/sign_in_repo.dart';
 import 'package:eyego_movies_app/features/auth/domain/repos/sign_up_repo.dart';
 import 'package:eyego_movies_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:eyego_movies_app/features/home/domain/repos/home_repo.dart';
+import 'package:eyego_movies_app/features/search/data/repos/search_repo_impl.dart';
+import 'package:eyego_movies_app/features/search/domain/repos/search_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -28,5 +30,8 @@ void getItSetup() {
   getIt.registerSingleton<MovieApiService>(TMDB());
   getIt.registerSingleton<HomeRepo>(
     HomeRepoImpl(movieApiService: getIt<MovieApiService>()),
+  );
+  getIt.registerSingleton<SearchRepo>(
+    SearchRepoImpl(movieApiService: getIt<MovieApiService>()),
   );
 }

@@ -33,12 +33,17 @@ abstract class AppTextStyles {
   static const selectedTabTextStyle = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    color: Colors.white,
+    color: AppColors.textColor,
   );
 
   static const unSelectedTabTextStyle = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.normal,
-    color: Colors.white,
+    color: AppColors.textColor,
+  );
+  static const appBarTextStyle = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textColor,
   );
 }

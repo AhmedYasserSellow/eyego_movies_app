@@ -64,9 +64,23 @@ class TMDB implements MovieApiService {
     Response response = await dio.get(
       '$baseUrl/$searcByNamehEndPoint?api_key=$apiKey&query=$query',
     );
+    List<dynamic> data = response.data['results'];
+    List<dynamic> filtredData =
+        data.where((movie) {
+          return movie['poster_path'] != null &&
+              movie['backdrop_path'] != null &&
+              movie['id'] != null &&
+              movie['overview'] != null &&
+              movie['title'] != null &&
+              movie['overview'] != null &&
+              movie['release_date'] != null &&
+              movie['vote_average'] != null &&
+              movie['genre_ids'] != null &&
+              movie['genre_ids'] != [];
+        }).toList();
     return List.generate(
-      response.data['results'].length,
-      (index) => MovieModel.fromTMDB(response.data['results'][index]),
+      filtredData.length,
+      (index) => MovieModel.fromTMDB(filtredData[index]),
     );
   }
 
