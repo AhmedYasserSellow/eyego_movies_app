@@ -1,8 +1,7 @@
 import 'package:eyego_movies_app/core/utils/app_colors.dart';
 import 'package:eyego_movies_app/core/utils/app_constants.dart';
-import 'package:eyego_movies_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:eyego_movies_app/features/search/presentation/manager/search_cubit/search_cubit.dart';
-import 'package:eyego_movies_app/features/search/presentation/widgets/search_result_view.dart';
+import 'package:eyego_movies_app/features/search/presentation/widgets/search_result_bloc_builder.dart';
 import 'package:eyego_movies_app/features/search/presentation/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +27,7 @@ class SearchViewBody extends StatelessWidget {
             suffixIcon: Icon(Icons.filter_list, color: AppColors.greyTextColor),
           ),
           SizedBox(height: 24),
-          Expanded(child: SearchResultView()),
+          Expanded(child: SearchResultBlocBuilder()),
           SizedBox(height: 24),
         ],
       ),

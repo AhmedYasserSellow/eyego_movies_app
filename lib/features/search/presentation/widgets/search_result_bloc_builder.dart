@@ -39,8 +39,10 @@ class SearchResultBlocBuilder extends StatelessWidget {
           );
         } else if (state is SearchError) {
           return CustomErrorWidget(errMessage: state.message);
+        } else if (state is SearchLoading) {
+          return const Center(child: CustomLoadingIndicator());
         } else {
-          return Center(child: CustomLoadingIndicator());
+          return SizedBox();
         }
       },
     );

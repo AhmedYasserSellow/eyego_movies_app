@@ -46,4 +46,10 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.textColor,
   );
+
+  static const movieTitleTextStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textColor,
+  );
 }

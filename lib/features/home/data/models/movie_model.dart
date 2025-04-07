@@ -33,7 +33,9 @@ class MovieModel extends MovieEntity {
       releaseDate: DateTime.parse(json["release_date"]).year.toString(),
       title: json["title"],
 
-      voteAverage: json["vote_average"].toDouble(),
+      voteAverage: double.parse(
+        (json["vote_average"].toDouble()).toStringAsFixed(1),
+      ),
 
       backdropPath:
           'https://image.tmdb.org/t/p/original${json["backdrop_path"]}',
