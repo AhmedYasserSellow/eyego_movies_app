@@ -6,6 +6,7 @@ import 'package:eyego_movies_app/core/utils/app_colors.dart';
 import 'package:eyego_movies_app/features/splash/presentation/views/splash_view.dart';
 import 'package:eyego_movies_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,7 @@ void main() async {
   getItSetup();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: kIsWeb,
       builder: (context) {
         return const MyApp();
       },

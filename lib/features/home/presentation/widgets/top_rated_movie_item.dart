@@ -1,24 +1,25 @@
 import 'package:eyego_movies_app/core/utils/app_colors.dart';
-import 'package:eyego_movies_app/core/utils/app_constants.dart';
-import 'package:eyego_movies_app/core/utils/app_images.dart';
+import 'package:eyego_movies_app/features/home/domain/entities/movie_entity.dart';
+import 'package:eyego_movies_app/features/home/presentation/widgets/movie_item.dart';
 import 'package:flutter/material.dart';
 
-class PopularMovieItem extends StatelessWidget {
-  const PopularMovieItem({super.key, required this.index});
+class TopRatedMovieItem extends StatelessWidget {
+  const TopRatedMovieItem({
+    super.key,
+    required this.index,
+    required this.movie,
+  });
   final String index;
+  final MovieEntity movie;
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.bottomLeft,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(kBorderRadius),
-          child: Image.asset(
-            AppImages.moviePoster,
-            fit: BoxFit.cover,
-            height: MediaQuery.sizeOf(context).height * 0.26,
-          ),
+        MovieItem(
+          movie: movie,
+          height: MediaQuery.sizeOf(context).height * 0.26,
         ),
         Positioned(
           left: -20,

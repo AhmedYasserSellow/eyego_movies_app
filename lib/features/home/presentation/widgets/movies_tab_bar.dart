@@ -9,15 +9,26 @@ class MoviesTabBar extends StatelessWidget {
   });
   final int currentIndex;
   final void Function(int) onTap;
+  static const List<String> movieTabsList = [
+    'Now Playing',
+    'Upcoming',
+    'Popular',
+  ];
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        MovieTab(title: 'Now Playing', isSelected: currentIndex == 0),
-        MovieTab(title: 'Upcoming', isSelected: currentIndex == 1),
-        MovieTab(title: 'Top Rated', isSelected: currentIndex == 2),
-      ],
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: List.generate(movieTabsList.length, (index) {
+        return GestureDetector(
+          onTap: () {
+            onTap(index);
+          },
+          child: MovieTab(
+            title: movieTabsList[index],
+            isSelected: currentIndex == index,
+          ),
+        );
+      }),
     );
   }
 }
