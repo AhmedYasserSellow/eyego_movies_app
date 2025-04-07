@@ -14,7 +14,7 @@ class SignInView extends StatelessWidget {
       create: (context) => SignInCubit(getIt<SignInRepo>()),
       child: const Scaffold(
         resizeToAvoidBottomInset: true,
-        body: SignInViewBlocConsumer(),
+        body: SafeArea(child: SignInViewBlocConsumer()),
       ),
     );
   }

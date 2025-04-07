@@ -1,5 +1,8 @@
+import 'package:eyego_movies_app/core/services/firebase_auth_service.dart';
+import 'package:eyego_movies_app/core/services/get_it_service.dart';
 import 'package:eyego_movies_app/core/utils/app_images.dart';
 import 'package:eyego_movies_app/features/auth/presentation/views/sign_in_view.dart';
+import 'package:eyego_movies_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -18,9 +21,15 @@ class _SplashViewState extends State<SplashView> {
   }
 
   executeNavigation(BuildContext context) {
+    bool isUserSignedIn = getIt<FirebaseAuthService>().isUserSignedIn();
+
     Future.delayed(const Duration(seconds: 2), () {
       if (context.mounted) {
-        Navigator.pushReplacementNamed(context, SignInView.routeName);
+        if (isUserSignedIn) {
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, SignInView.routeName);
+        }
       }
     });
   }

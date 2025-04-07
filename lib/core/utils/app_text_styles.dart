@@ -18,4 +18,27 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.normal,
     color: AppColors.greyTextColor,
   );
+
+  static const selsctedNavbarLabelTextStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primaryColor,
+  );
+  static const unSelectedNavBarLabelTextStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.greyTextColor,
+  );
+
+  static const selectedTabTextStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+  );
+
+  static const unSelectedTabTextStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
 }

@@ -23,77 +23,75 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   bool obscureText = true;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-        child: SingleChildScrollView(
-          child: Form(
-            key: formKey,
-            child: Column(
-              spacing: 20,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                LogoPresenter(title: 'Welcome Back'),
-                ColumnTextField(
-                  validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Email is required';
-                    }
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      child: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Column(
+            spacing: 20,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              LogoPresenter(title: 'Welcome Back'),
+              ColumnTextField(
+                validator: (String? value) {
+                  if (value!.isEmpty) {
+                    return 'Email is required';
+                  }
 
-                    return null;
-                  },
-                  title: 'Email',
-                  onChanged: (String value) {
-                    setState(() {
-                      email = value;
-                    });
-                  },
-                ),
-                ColumnTextField(
-                  validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password is required';
-                    }
+                  return null;
+                },
+                title: 'Email',
+                onChanged: (String value) {
+                  setState(() {
+                    email = value;
+                  });
+                },
+              ),
+              ColumnTextField(
+                validator: (String? value) {
+                  if (value!.isEmpty) {
+                    return 'Password is required';
+                  }
 
-                    return null;
-                  },
-                  title: 'Password',
+                  return null;
+                },
+                title: 'Password',
+                obscureText: obscureText,
+                suffixIcon: ToogleObscure(
                   obscureText: obscureText,
-                  suffixIcon: ToogleObscure(
-                    obscureText: obscureText,
-                    onToggle: (bool value) {
-                      setState(() {
-                        obscureText = value;
-                      });
-                    },
-                  ),
-                  onChanged: (String value) {
+                  onToggle: (bool value) {
                     setState(() {
-                      password = value;
+                      obscureText = value;
                     });
                   },
                 ),
-                AuthButton(
-                  title: 'Sign In',
-                  onTap: () async {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
-                      await context
-                          .read<SignInCubit>()
-                          .signInWithEmailAndPassword(
-                            email: email,
-                            password: password,
-                          );
-                    } else {
-                      setState(() {
-                        autovalidateMode = AutovalidateMode.always;
-                      });
-                    }
-                  },
-                ),
-                const DoNotHaveAnAccount(),
-              ],
-            ),
+                onChanged: (String value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
+              ),
+              AuthButton(
+                title: 'Sign In',
+                onTap: () async {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    await context
+                        .read<SignInCubit>()
+                        .signInWithEmailAndPassword(
+                          email: email,
+                          password: password,
+                        );
+                  } else {
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
+                  }
+                },
+              ),
+              const DoNotHaveAnAccount(),
+            ],
           ),
         ),
       ),
