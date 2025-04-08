@@ -28,13 +28,10 @@ class CustomButtonNavBar extends StatelessWidget {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
 
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark_outline_outlined),
-            label: 'Watch List',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            icon: Icon(Icons.bookmark_outline),
+            label: 'Watchlist',
           ),
         ],
       ),

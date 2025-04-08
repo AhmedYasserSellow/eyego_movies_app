@@ -5,6 +5,7 @@ abstract class AppImages {
   static const String moviePoster = '$basePath/movie_poster.png';
   static const String movieBackground = '$basePath/movie_background.png';
   static const String noSearchFound = '$basePath/no_search_found.png';
+  static const String noWatchlist = '$basePath/no_watchlist.png';
 }
 
 abstract class AppIcons {

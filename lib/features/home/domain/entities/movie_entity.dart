@@ -18,4 +18,17 @@ class MovieEntity {
     required this.backdropPath,
     required this.id,
   });
+
+  toMap() {
+    return {
+      'title': title,
+      'posterPath': posterPath,
+      'overview': overview,
+      'releaseDate': releaseDate,
+      'voteAverage': voteAverage,
+      'genre': genre,
+      'backdropPath': backdropPath,
+      'id': id,
+    };
+  }
 }

@@ -2,7 +2,7 @@ import 'package:eyego_movies_app/core/utils/app_colors.dart';
 import 'package:eyego_movies_app/core/utils/app_constants.dart';
 import 'package:eyego_movies_app/core/utils/app_images.dart';
 import 'package:eyego_movies_app/core/utils/app_text_styles.dart';
-import 'package:eyego_movies_app/core/widgets/custom_app_bar.dart';
+import 'package:eyego_movies_app/features/movie_details/presentation/widgets/custom_app_bar.dart';
 import 'package:eyego_movies_app/core/widgets/custom_list_tile.dart';
 import 'package:eyego_movies_app/features/home/domain/entities/movie_entity.dart';
 import 'package:eyego_movies_app/features/movie_details/presentation/widgets/movie_detials_header.dart';
@@ -22,7 +22,7 @@ class MovieDetailsView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: kHorizontalPadding,
               ),
-              child: CustomAppBar(title: 'Detials'),
+              child: CustomAppBar(movie: movie),
             ),
             Expanded(
               child: SingleChildScrollView(

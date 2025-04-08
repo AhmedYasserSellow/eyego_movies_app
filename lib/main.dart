@@ -9,6 +9,8 @@ import 'package:eyego_movies_app/features/home/presentation/managers/popluar_cub
 import 'package:eyego_movies_app/features/home/presentation/managers/top_rated/top_rated_cubit.dart';
 import 'package:eyego_movies_app/features/home/presentation/managers/upcoming/upcoming_cubit.dart';
 import 'package:eyego_movies_app/features/splash/presentation/views/splash_view.dart';
+import 'package:eyego_movies_app/features/watchlist/domain/repos/watchlist_repo.dart';
+import 'package:eyego_movies_app/features/watchlist/presentation/managers/watchlist/watchlist_cubit.dart';
 import 'package:eyego_movies_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -60,6 +62,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create:
               (context) => PopularCubit(getIt<HomeRepo>())..getPopularMovies(),
+        ),
+        BlocProvider(
+          create:
+              (context) =>
+                  WatchlistCubit(getIt<WatchlistRepo>())..getWatchlistMovies,
         ),
       ],
       child: MaterialApp(

@@ -1,10 +1,13 @@
 import 'package:eyego_movies_app/core/utils/app_colors.dart';
 import 'package:eyego_movies_app/core/utils/app_text_styles.dart';
+import 'package:eyego_movies_app/features/home/domain/entities/movie_entity.dart';
+import 'package:eyego_movies_app/features/movie_details/presentation/widgets/bookmark_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title});
-  final String title;
+  const CustomAppBar({super.key, required this.movie});
+
+  final MovieEntity movie;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -16,18 +19,8 @@ class CustomAppBar extends StatelessWidget {
       elevation: 0,
       scrolledUnderElevation: 0,
       centerTitle: true,
-      title: Text(title, style: AppTextStyles.appBarTextStyle),
-      actions: [Icon(Icons.bookmark_outline, color: AppColors.textColor)],
+      title: Text('Details', style: AppTextStyles.appBarTextStyle),
+      actions: [BookMarkItem(movie: movie)],
     );
-    // return Padding(
-    //   padding: const EdgeInsets.only(top: 12),
-    //   child: Row(
-    //     mainAxisAlignment: MainAxisAlignment.center,
-    //     children: [
-    //       Text(title, style: AppTextStyles.appBarTextStyle),
-    //      ,
-    //     ],
-    //   ),
-    // );
   }
 }

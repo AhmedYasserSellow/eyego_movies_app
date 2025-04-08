@@ -41,4 +41,17 @@ class MovieModel extends MovieEntity {
           'https://image.tmdb.org/t/p/original${json["backdrop_path"]}',
     );
   }
+
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
+      genre: json["genre"],
+      id: json["id"],
+      posterPath: json["posterPath"],
+      overview: json["overview"],
+      releaseDate: json["releaseDate"],
+      title: json["title"],
+      voteAverage: json["voteAverage"],
+      backdropPath: json["backdropPath"],
+    );
+  }
 }

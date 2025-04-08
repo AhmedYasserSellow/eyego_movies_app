@@ -3,6 +3,7 @@ import 'package:eyego_movies_app/core/services/firebase_auth_service.dart';
 import 'package:eyego_movies_app/core/services/firebase_firestore_service.dart';
 import 'package:eyego_movies_app/core/services/movie_api_service.dart';
 import 'package:eyego_movies_app/core/services/tmdb_service.dart';
+import 'package:eyego_movies_app/core/services/watchlist_database_service.dart';
 import 'package:eyego_movies_app/features/auth/data/repos/sign_in_repo_impl.dart';
 import 'package:eyego_movies_app/features/auth/data/repos/sign_up_repo_impl.dart';
 import 'package:eyego_movies_app/features/auth/domain/repos/sign_in_repo.dart';
@@ -11,6 +12,9 @@ import 'package:eyego_movies_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:eyego_movies_app/features/home/domain/repos/home_repo.dart';
 import 'package:eyego_movies_app/features/search/data/repos/search_repo_impl.dart';
 import 'package:eyego_movies_app/features/search/domain/repos/search_repo.dart';
+import 'package:eyego_movies_app/features/watchlist/data/datasource/firebase_datasource.dart';
+import 'package:eyego_movies_app/features/watchlist/data/repos/watchlist_repo_impl.dart';
+import 'package:eyego_movies_app/features/watchlist/domain/repos/watchlist_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -33,5 +37,11 @@ void getItSetup() {
   );
   getIt.registerSingleton<SearchRepo>(
     SearchRepoImpl(movieApiService: getIt<MovieApiService>()),
+  );
+  getIt.registerSingleton<WatchlistDatabaseService>(FirebaseDatasource());
+  getIt.registerSingleton<WatchlistRepo>(
+    WatchlistRepoImpl(
+      watchListDatabaseService: getIt<WatchlistDatabaseService>(),
+    ),
   );
 }
