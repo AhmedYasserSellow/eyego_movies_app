@@ -3,6 +3,7 @@ import 'package:eyego_movies_app/core/utils/app_colors.dart';
 import 'package:eyego_movies_app/features/home/domain/entities/movie_entity.dart';
 import 'package:eyego_movies_app/features/watchlist/domain/repos/watchlist_repo.dart';
 import 'package:eyego_movies_app/features/watchlist/presentation/managers/watchlist/watchlist_cubit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,12 +28,17 @@ class _BookMarkItemState extends State<BookMarkItem> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
+        String uID = FirebaseAuth.instance.currentUser!.uid;
         if (isBookamrked) {
           getIt<WatchlistRepo>().removeFromWatchlist(
+            uID: uID,
             movieID: widget.movie.id.toString(),
           );
         } else {
-          getIt<WatchlistRepo>().addToWatchlist(movieEntity: widget.movie);
+          getIt<WatchlistRepo>().addToWatchlist(
+            movieEntity: widget.movie,
+            uID: uID,
+          );
         }
         await context.read<WatchlistCubit>().getWatchlistMovies();
         setState(() {

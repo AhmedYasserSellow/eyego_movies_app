@@ -3,29 +3,31 @@ import 'package:eyego_movies_app/core/errors/failure.dart';
 import 'package:eyego_movies_app/core/services/watchlist_database_service.dart';
 import 'package:eyego_movies_app/features/home/domain/entities/movie_entity.dart';
 import 'package:eyego_movies_app/features/watchlist/domain/repos/watchlist_repo.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class WatchlistRepoImpl implements WatchlistRepo {
   final WatchlistDatabaseService watchListDatabaseService;
 
   WatchlistRepoImpl({required this.watchListDatabaseService});
 
-  final String userID = FirebaseAuth.instance.currentUser!.uid;
-
   @override
-  Future<void> addToWatchlist({required MovieEntity movieEntity}) async {
+  Future<void> addToWatchlist({
+    required MovieEntity movieEntity,
+    required String uID,
+  }) async {
     await watchListDatabaseService.addData(
-      path: userID,
+      path: uID,
       data: movieEntity.toMap(),
       docID: movieEntity.id.toString(),
     );
   }
 
   @override
-  Future<Either<Failure, List<MovieEntity>>> getWatchlist() async {
+  Future<Either<Failure, List<MovieEntity>>> getWatchlist({
+    required String uID,
+  }) async {
     try {
       List<MovieEntity> result = await watchListDatabaseService.getData(
-        path: userID,
+        path: uID,
       );
       return Right(result);
     } catch (e) {
@@ -34,7 +36,10 @@ class WatchlistRepoImpl implements WatchlistRepo {
   }
 
   @override
-  Future<void> removeFromWatchlist({required String movieID}) async {
-    await watchListDatabaseService.deleteData(path: userID, docID: movieID);
+  Future<void> removeFromWatchlist({
+    required String movieID,
+    required String uID,
+  }) async {
+    await watchListDatabaseService.deleteData(path: uID, docID: movieID);
   }
 }
