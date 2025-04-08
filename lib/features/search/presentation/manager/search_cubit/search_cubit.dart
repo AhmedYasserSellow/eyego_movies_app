@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:eyego_movies_app/core/errors/failure.dart';
-import 'package:eyego_movies_app/core/utils/app_constants.dart';
+import 'package:eyego_movies_app/core/utils/env.dart';
 import 'package:eyego_movies_app/features/home/domain/entities/movie_entity.dart';
 import 'package:eyego_movies_app/features/search/domain/repos/search_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

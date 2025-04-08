@@ -1,6 +1,5 @@
 const double kBorderRadius = 16.0;
 const double kHorizontalPadding = 24.0;
-const String apikey = '34fe49bc07ba95019d4dc599c9c2a811';
 
 final List<Map<String, dynamic>> genres = [
   {"id": 28, "name": "Action"},
@@ -22,4 +21,27 @@ final List<Map<String, dynamic>> genres = [
   {"id": 53, "name": "Thriller"},
   {"id": 10752, "name": "War"},
   {"id": 37, "name": "Western"},
+];
+
+final List<String?> genreNames = [
+  null,
+  "Action",
+  "Adventure",
+  "Animation",
+  "Comedy",
+  "Crime",
+  "Documentary",
+  "Drama",
+  "Family",
+  "Fantasy",
+  "History",
+  "Horror",
+  "Music",
+  "Mystery",
+  "Romance",
+  "Science Fiction",
+  "TV Movie",
+  "Thriller",
+  "War",
+  "Western",
 ];
