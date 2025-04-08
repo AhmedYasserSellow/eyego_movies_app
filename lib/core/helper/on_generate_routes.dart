@@ -10,8 +10,6 @@ import 'package:eyego_movies_app/features/home/presentation/managers/upcoming/up
 import 'package:eyego_movies_app/features/home/presentation/views/home_view.dart';
 import 'package:eyego_movies_app/features/movie_details/presentation/views/movie_details_view.dart';
 import 'package:eyego_movies_app/features/splash/presentation/views/splash_view.dart';
-import 'package:eyego_movies_app/features/watchlist/domain/repos/watchlist_repo.dart';
-import 'package:eyego_movies_app/features/watchlist/presentation/managers/watchlist/watchlist_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -63,12 +61,6 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
                 create:
                     (context) =>
                         PopularCubit(getIt<HomeRepo>())..getPopularMovies(),
-              ),
-              BlocProvider(
-                create:
-                    (context) =>
-                        WatchlistCubit(getIt<WatchlistRepo>())
-                          ..getWatchlistMovies,
               ),
             ],
             child: const HomeView(),
