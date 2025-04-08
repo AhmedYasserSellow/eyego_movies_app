@@ -104,6 +104,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 },
               ),
               const AlreadyHaveAnAccount(),
+              SizedBox(),
             ],
           ),
         ),

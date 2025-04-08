@@ -91,6 +91,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 },
               ),
               const DoNotHaveAnAccount(),
+              SizedBox(),
             ],
           ),
         ),
