@@ -1,10 +1,10 @@
-# 🎮 eyego_movies_app
+#  eyego_movies_app
 
 A beautiful and responsive Flutter application that displays movies fetched from a public API, inspired by IMDb. This app showcases trending movies, detailed info, and more — built using clean architecture and modern Flutter development practices.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Browse trending/popular movies
 - Search movies by name
@@ -14,14 +14,14 @@ A beautiful and responsive Flutter application that displays movies fetched from
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
-### ✅ Requirements
+###  Requirements
 - Flutter SDK (latest stable version)
 - Android Studio / VS Code
 - Emulator or real device
 
-### ⚙️ Getting Started
+###  Getting Started
 
 1. **Clone the repository**
    ```bash
@@ -49,7 +49,7 @@ A beautiful and responsive Flutter application that displays movies fetched from
 
 ---
 
-## 🧠 Implementation Approach
+##  Implementation Approach
 
 ### 🛆 Architecture
 
@@ -71,13 +71,13 @@ The app follows a **clean architecture** pattern with clear separation of concer
     - `watchlist/`: Watchlist feature for saving favorite movies
 
 
-### 🌐 API Integration
+###  API Integration
 
 - Data is fetched from [TMDb API](https://developers.themoviedb.org/3)
 - `Dio` is used for network calls
 - Asynchronous loading handled with `BloC` (based on your approach)
 
-### 🎨 UI & UX
+###  UI & UX
 
 - Built with Flutter widgets and Material Design
 - Uses `ListView.builder`, `PageView`, and custom cards
@@ -85,7 +85,7 @@ The app follows a **clean architecture** pattern with clear separation of concer
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 | Home Screen | Movie Details |
 |-------------|----------------|
@@ -93,7 +93,7 @@ The app follows a **clean architecture** pattern with clear separation of concer
 
 ---
 
-## 💡 Future Improvements
+##  Future Improvements
 
 - Integrate social login (Google, Facebook) for quicker authentication.
 - Add user reviews and ratings to engage users and show community feedback.
@@ -102,13 +102,13 @@ The app follows a **clean architecture** pattern with clear separation of concer
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Pull requests are welcome! For major changes, open an issue first to discuss what you would like to change.
 
 ---
 
-## 🔗 Links
+##  Links
 
 - [Flutter](https://flutter.dev/)
 - [TMDb API](https://www.themoviedb.org/)
