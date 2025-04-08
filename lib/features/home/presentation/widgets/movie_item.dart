@@ -10,21 +10,25 @@ class MovieItem extends StatelessWidget {
   final MovieEntity movie;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(
-          context,
-          MovieDetailsView.routeName,
-          arguments: movie,
-        );
-      },
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(kBorderRadius),
-        child: CachedNetworkImage(
-          imageUrl: movie.posterPath,
+    return SizedBox(
+      height: height,
+      width: height != null ? height! * 2 / 3 : null,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            MovieDetailsView.routeName,
+            arguments: movie,
+          );
+        },
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(kBorderRadius),
+          child: CachedNetworkImage(
+            imageUrl: movie.posterPath,
 
-          fit: BoxFit.cover,
-          height: height,
+            fit: BoxFit.cover,
+            height: height,
+          ),
         ),
       ),
     );
