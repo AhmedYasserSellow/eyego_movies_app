@@ -93,6 +93,16 @@ The app follows a **clean architecture** pattern with clear separation of concer
 
 ---
 
+## 🎥 Demo
+
+Check out the app in action:
+
+<video src="demo/demo.mp4" controls width="100%"></video>
+
+> If the video doesn’t autoplay, download and open it manually from [`demo/demo.mp4`](demo/demo.mp4)
+
+---
+
 ## 💡 Future Improvements
 
 - Integrate social login (Google, Facebook) for quicker authentication.
